@@ -20,6 +20,7 @@ async def rename(interaction: Interaction, user: Member, new_name: str):
 
     if (len(new_name) > 32):
         await interaction.response.send_message("New name is too long")
+        return
 
     await user.edit(nick=new_name)
     await interaction.response.send_message("User renamed successfully")
